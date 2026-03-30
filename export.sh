@@ -8,6 +8,10 @@ set -e
 echo "Cloning into jc-builds/CalorieCLIP"
 git clone https://huggingface.co/jc-builds/CalorieCLIP
 
+echo "Creating virtual environment"
+python -m venv .venv
+source .venv/bin/activate
+
 echo "Installing PyTorch dependencies for export..."
 pip install torch open-clip-torch onnx onnxscript
 
