@@ -1,0 +1,22 @@
+services:
+  calorie-api:
+    build: ./backend
+    image: calorie-tracker:latest
+    container_name: calorie-clip-server
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+    volumes:
+      - sqlite-data:/data
+    depends_on:
+      - sqlite-db
+
+  sqlite-db:
+    image: alpine:latest
+    container_name: calorie-sqlite
+    volumes:
+      - sqlite-data:/data
+    command: ["echo", "SQLite volume ready"]
+
+volumes:
+  sqlite-data:
