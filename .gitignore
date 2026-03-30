@@ -1,2 +1,6 @@
 __pycache__
-calorie_clip.pt
+*.pyc
+*.pyo
+*.egg-info
+CalorieCLIP/
+calorie_clip.*
